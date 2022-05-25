@@ -1,27 +1,43 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import HomePage from './pages/homepages/homepage.components';
-
-
-function HatsPage() {
+const App = () => {
   return (
-    <div>
-    <h1>HATS PAGE</h1>
-  </div>
-
+    <div className='categories-container'>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Hats</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Jackets</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Sneakers</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Womens</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Mens</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+    </div>
   );
-}
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<HomePage />} />
-        <Route path='/hats' element={<HatsPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+};
 
 export default App;
