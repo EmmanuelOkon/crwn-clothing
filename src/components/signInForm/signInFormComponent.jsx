@@ -2,6 +2,7 @@ import { useState } from 'react';
 import FormInput from '../formInput/formInputComponent';
 import './signInFormStyles.scss';
 import Button from '../button/buttonComponent';
+import { UserContext } from '../../context/userContext';
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -22,19 +23,18 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async event => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -80,7 +80,7 @@ const SignInForm = () => {
         />
         <div className='buttons-container'>
           <Button type='submit'>Sign In</Button>
-          <Button type="button" buttonType='google' onClick={signInWithGoogle}>
+          <Button type='button' buttonType='google' onClick={signInWithGoogle}>
             Google sign in
           </Button>
         </div>

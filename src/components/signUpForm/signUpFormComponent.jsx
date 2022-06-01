@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import FormInput from '../formInput/formInputComponent';
-import './signUpFormStyles.scss';
 import Button from '../button/buttonComponent';
+
+import './signUpFormStyles.scss';
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -35,6 +37,7 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -93,9 +96,7 @@ const SignUpForm = () => {
           value={confirmPassword}
         />
 
-        <Button type='submit'>
-          Sign Up
-        </Button>
+        <Button type='submit'>Sign Up</Button>
       </form>
     </div>
   );
