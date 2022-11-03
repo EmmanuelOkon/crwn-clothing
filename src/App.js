@@ -1,27 +1,19 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import HomePage from './pages/homepages/homepage.components';
+import { Routes, Route } from 'react-router-dom';
+import Home from './routes/home/homeComponent';
+import Navigation from './routes/navigation/navigationComponent';
+import Auth from './routes/auth/authComponent';
+import Shop from './routes/shop/shopComponents';
 
-
-function HatsPage() {
+const App = () => {
   return (
-    <div>
-    <h1>HATS PAGE</h1>
-  </div>
-
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='shop' element={<Shop />} />
+        <Route path='auth' element={<Auth />} />
+      </Route>
+    </Routes>
   );
-}
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<HomePage />} />
-        <Route path='/hats' element={<HatsPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+};
 
 export default App;

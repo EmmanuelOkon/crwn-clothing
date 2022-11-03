@@ -1,0 +1,33 @@
+FacebookAuthProvider,
+  EmailAuthProvider,
+  GithubAuthProvider,
+  TwitterAuthProvider,
+
+const facebookProvider = new FacebookAuthProvider();
+const emailProvider = new EmailAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
+
+facebookProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+emailProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+githubProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+twitterProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+export const signInWithFacebook = () => FacebookAuthProvider(auth, googleProvider);
+export const signInWithEmail = () => EmailAuthProvider(auth, googleProvider);
+export const signInWithGithub = () => GithubAuthProvider(auth, googleProvider);
+export const signInWithTwitter = () => TwitterAuthProvider(auth, googleProvider);
+
+I had to edit this file on November 2, 2022 so I can test my remote branch
