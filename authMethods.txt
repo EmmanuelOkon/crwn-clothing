@@ -29,3 +29,5 @@ export const signInWithFacebook = () => FacebookAuthProvider(auth, googleProvide
 export const signInWithEmail = () => EmailAuthProvider(auth, googleProvider);
 export const signInWithGithub = () => GithubAuthProvider(auth, googleProvider);
 export const signInWithTwitter = () => TwitterAuthProvider(auth, googleProvider);
+
+I had to edit this file on November 2, 2022 so I can test my remote branch
