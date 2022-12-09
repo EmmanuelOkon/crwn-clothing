@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FormInput from '../formInput/formInputComponent';
 import './signInFormStyles.scss';
 import Button from '../button/buttonComponent';
-import { UserContext } from '../../context/userContext';
+import { UserContext } from '../../contexts/userContext';
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
