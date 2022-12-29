@@ -34,15 +34,16 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      // switch (error.code) {
-      //   case "auth/wrong-password":
-      //     alert("incorrect credentials");
-      //     break;
-      //   case "auth/user-not-found":
-      //     alert("User not found");
-      //     break;
-      //   default:
-      console.log("user sign in failed", error);
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("incorrect credentials");
+          break;
+        case "auth/user-not-found":
+          alert("User not found");
+          break;
+        default:
+          console.log("user sign in failed", error);
+      }
     }
   };
 
@@ -88,5 +89,4 @@ const SignInForm = () => {
     </SignInContainer>
   );
 };
-
 export default SignInForm;
