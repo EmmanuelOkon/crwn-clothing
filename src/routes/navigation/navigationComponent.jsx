@@ -25,15 +25,15 @@ const Navigation = () => {
           <CrwnLogo className="logo" />
         </LogoContainer>
         <NavLinks>
-          <NavLink className="nav-link" to="/shop">
+          <NavLink to="/shop">
             SHOP
           </NavLink>
           {currentUser ? (
-            <NavLink as="span" className="nav-link" onClick={signOutUser}>
+            <NavLink as="span" onClick={signOutUser}>
               SIGN OUT
             </NavLink>
           ) : (
-            <NavLink className="nav-link" to="/auth">
+            <NavLink to="/auth">
               SIGN IN
             </NavLink>
           )}
