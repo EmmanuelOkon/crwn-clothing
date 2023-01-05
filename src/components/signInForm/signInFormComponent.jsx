@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 
 import FormInput from "../formInput/formInputComponent";
@@ -9,6 +10,7 @@ import {
 } from "../../utils/firebase/firebaseUtils";
 
 import { SignInContainer, Title, ButtonsContainer } from "./signInFormStyles";
+// import { Navigate } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -18,6 +20,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -45,6 +48,8 @@ const SignInForm = () => {
           console.log("user sign in failed", error);
       }
     }
+
+    // history.push("/");
   };
 
   const handleChange = (event) => {
@@ -55,6 +60,7 @@ const SignInForm = () => {
 
   return (
     <SignInContainer>
+      {/* {user && <Navigate to="/" replace={true} />} */}
       <Title>Already have an account?</Title>
       <span>Sign in with Email and Password</span>
       <form onSubmit={handleSubmit}>
@@ -75,6 +81,7 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
+
         <ButtonsContainer className="buttons-container">
           <Button type="submit">Sign In</Button>
           <Button
@@ -89,4 +96,5 @@ const SignInForm = () => {
     </SignInContainer>
   );
 };
+
 export default SignInForm;
