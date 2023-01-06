@@ -4,6 +4,9 @@ import logger from 'redux-logger';
 import { rootReducer } from './rootReducer';
 
 
+
+// const loggerMiddleware = 
+
 const middleWares = [logger]
 
 // process.env.NODE_ENV === 'development' && logger
