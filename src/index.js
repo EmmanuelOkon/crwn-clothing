@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import { render } from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import App from "./App";
-import { CategoriesProvider } from "./contexts/categoriesContext";
 import { CartProvider } from "./contexts/cartContext";
 import { store } from "./store/store";
 
@@ -16,11 +14,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>
