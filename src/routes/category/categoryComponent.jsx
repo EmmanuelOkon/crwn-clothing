@@ -6,26 +6,28 @@ import ProductCard from "../../components/productCard/productCardComponent";
 
 import { selectCategoriesMap } from "../../store/categories/categorySelector";
 
-import "./categoryComponentStyles.scss";
+import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
 
 const Category = () => {
   const { category } = useParams();
+  console.log("render/re-rendering category component");
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
+    console.log("effect fired calling setProducts");
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
   return (
     <Fragment>
-      <h2 className="categoryTitle">{category.toUpperCase()}</h2>
-      <div className="categoryContainer">
+      <Title>{category.toUpperCase()}</Title>
+      <CategoryContainer>
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-      </div>
+      </CategoryContainer>
     </Fragment>
   );
 };
