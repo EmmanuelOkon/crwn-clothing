@@ -3,8 +3,12 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import ProductCard from "../../components/productCard/productCardComponent";
+import Spinner from "../../components/spinner/spinnerComponent";
 
-import { selectCategoriesMap } from "../../store/categories/categorySelector";
+import {
+  selectCategoriesMap,
+  selectIsLoading,
+} from "../../store/categories/categorySelector";
 
 
 import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
@@ -12,8 +16,8 @@ import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
 const Category = () => {
   const { category } = useParams();
 
-
   const categoriesMap = useSelector(selectCategoriesMap);
+  const isLoading = useSelector(selectIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
@@ -24,12 +28,16 @@ const Category = () => {
   return (
     <Fragment>
       <Title>{category.toUpperCase()}</Title>
-      <CategoryContainer>
-        {products &&
-          products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </CategoryContainer>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <CategoryContainer>
+          {products &&
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+        </CategoryContainer>
+      )}
     </Fragment>
   );
 };
