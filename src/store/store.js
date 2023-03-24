@@ -1,6 +1,5 @@
 import { compose, applyMiddleware } from "redux";
 import { legacy_createStore as createStore } from "redux";
-// import logger from "redux-logger";
 import { rootReducer } from "./rootReducer";
 
 const loggerMiddleware = (store) => (next) => (action) => {
@@ -18,7 +17,6 @@ const loggerMiddleware = (store) => (next) => (action) => {
 };
 
 const middleWares = [loggerMiddleware];
-// const middleWares = [logger];
 
 const composedEnhancers = compose(applyMiddleware(...middleWares));
 
