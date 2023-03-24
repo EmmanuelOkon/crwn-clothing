@@ -1,7 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 import { Routes, Route } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+
 
 import {
   onAuthStateChangedListener,
@@ -12,7 +14,8 @@ import Navigation from "./routes/navigation/navigationComponent";
 import Auth from "./routes/auth/authComponent";
 import Shop from "./routes/shop/shopComponents";
 import Checkout from "./routes/checkout/checkoutComponent";
-import Example from "./pages/react/react.jsx";
+
+
 import { setCurrentUser } from "./store/user/userAction";
 
 const App = () => {
@@ -27,7 +30,9 @@ const App = () => {
     });
 
     return unsubscribe;
-  }, [dispatch]);
+
+  }, []);
+
 
   return (
     <Routes>
@@ -36,7 +41,7 @@ const App = () => {
         <Route path="shop/*" element={<Shop />} />
         <Route path="auth" element={<Auth />} />
         <Route path="checkout" element={<Checkout />} />
-        <Route path="eg" element={<Example />} />
+
       </Route>
     </Routes>
   );

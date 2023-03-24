@@ -6,11 +6,13 @@ import ProductCard from "../../components/productCard/productCardComponent";
 
 import { selectCategoriesMap } from "../../store/categories/categorySelector";
 
-import { CategoryContainer, Title } from './categoryComponentStyles';
+
+import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
 
 const Category = () => {
   const { category } = useParams();
-  console.log('render/re-rendering category component');
+
+
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
