@@ -5,7 +5,6 @@ import FormInput from "../formInput/formInputComponent";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/buttonComponent";
 
 import { SignInContainer, Title, ButtonsContainer } from "./signInFormStyles";
-
 import {
   googleSignInStart,
   emailSignInStart,
@@ -17,9 +16,9 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  const dispatch = useDispatch();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -33,7 +32,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      dispatch(emailSignInStart({ email, password }));
+      dispatch(emailSignInStart(email, password));
       resetFormFields();
     } catch (error) {
       console.log("user sign in failed", error);
@@ -48,7 +47,6 @@ const SignInForm = () => {
 
   return (
     <SignInContainer>
-      {/* {user && <Navigate to="/" replace={true} />} */}
       <Title>Already have an account?</Title>
       <span>Sign in with Email and Password</span>
       <form onSubmit={handleSubmit}>
@@ -69,7 +67,6 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-
         <ButtonsContainer className="buttons-container">
           <Button type="submit">Sign In</Button>
           <Button

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import FormInput from "../formInput/formInputComponent";
 import Button from "../button/buttonComponent";
 
@@ -7,8 +8,8 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebaseUtils";
-import { signUpStart } from "../../store/user/userAction";
 
+import { signUpStart } from "../../store/user/userAction";
 import { SignUpContainer } from "./signUpFormStyles";
 
 const defaultFormFields = {
