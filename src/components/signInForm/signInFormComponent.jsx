@@ -1,16 +1,14 @@
-import * as React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import FormInput from "../formInput/formInputComponent";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/buttonComponent";
 
-import {
-  signInWithGooglePopup,
-  signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebaseUtils";
-
 import { SignInContainer, Title, ButtonsContainer } from "./signInFormStyles";
-// import { Navigate } from "react-router-dom";
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/userAction";
 
 const defaultFormFields = {
   email: "",
@@ -18,38 +16,27 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password);
+      dispatch(emailSignInStart(email, password));
       resetFormFields();
     } catch (error) {
-      switch (error.code) {
-        case "auth/wrong-password":
-          alert("incorrect credentials");
-          break;
-        case "auth/user-not-found":
-          alert("User not found");
-          break;
-        default:
-          console.log("user sign in failed", error);
-      }
+      console.log("user sign in failed", error);
     }
-
-    // history.push("/");
   };
 
   const handleChange = (event) => {
@@ -60,7 +47,6 @@ const SignInForm = () => {
 
   return (
     <SignInContainer>
-      {/* {user && <Navigate to="/" replace={true} />} */}
       <Title>Already have an account?</Title>
       <span>Sign in with Email and Password</span>
       <form onSubmit={handleSubmit}>
@@ -81,7 +67,6 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-
         <ButtonsContainer className="buttons-container">
           <Button type="submit">Sign In</Button>
           <Button

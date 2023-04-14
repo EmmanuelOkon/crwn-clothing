@@ -10,18 +10,15 @@ import {
   selectIsLoading,
 } from "../../store/categories/categorySelector";
 
-
 import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
 
 const Category = () => {
   const { category } = useParams();
-
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
-    console.log('effect fired calling setProducts');
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
