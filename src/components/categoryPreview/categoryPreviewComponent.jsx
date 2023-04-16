@@ -13,7 +13,7 @@ const CategoryPreview = ({ title, products }) => {
         <TitleLink to={title}>{title.toUpperCase()}</TitleLink>
       </Title>
       <PreviewContainer>
-       {products
+        {products
           .filter((_, idx) => idx < 4)
           .map((product) => (
             <ProductCard key={product.id} product={product} />

@@ -5,4 +5,9 @@ export const DirectoryContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 429px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;

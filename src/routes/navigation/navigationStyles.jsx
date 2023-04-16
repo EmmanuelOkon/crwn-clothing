@@ -9,7 +9,6 @@ export const NavigationContainer = styled.div`
   align-items: center;
 
   @media (max-width: 426px) {
-    background-color: red;
   }
 `;
 
@@ -39,7 +38,6 @@ export const NavLink = styled(Link)`
     font-size: 14px;
     padding: 5px 10px;
     line-height: 1;
-    
   }
 
   @media (max-width: 426px) {

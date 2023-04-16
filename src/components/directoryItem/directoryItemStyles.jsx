@@ -6,6 +6,7 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  /* background-color: red; */
 `;
 
 export const DirectoryItemBody = styled.div`
@@ -26,11 +27,17 @@ export const DirectoryItemBody = styled.div`
     font-size: 22px;
     color: #4a4a4a;
     text-transform: uppercase;
+
+    @media (max-width: 769px) {
+      font-size: 14px;
+      margin: 0;
+    }
   }
 
   p {
     font-weight: lighter;
     font-size: 16px;
+    margin: 2px 0;
   }
 `;
 

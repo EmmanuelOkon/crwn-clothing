@@ -3,9 +3,12 @@ body {
   padding: 20px 40px;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
+  overflow-x: none;
+  transition: all ease-in-out 2sec;
 
-  @media (max-width: 426px) {
+  @media (max-width: 769px) {
     padding: 16px 32px;
+    // background-color: aquamarine;
   }
 
   @media (max-width: 380px) {
