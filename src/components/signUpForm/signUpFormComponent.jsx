@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import FormInput from "../formInput/formInputComponent";
-import Button from "../button/buttonComponent";
-
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/firebaseUtils";
 
 import { signUpStart } from "../../store/user/userAction";
-import { SignUpContainer } from "./signUpFormStyles";
+import {
+  SignUpContainer,
+  Title,
+  Span,
+  NavLink,
+  ButtonWrapper,
+} from "./signUpFormStyles";
 
 const defaultFormFields = {
   displayName: "",
@@ -56,8 +56,8 @@ const SignUpForm = () => {
 
   return (
     <SignUpContainer>
-      <h2>Don't have an account?</h2>
-      <span>Sign Up with Email and Password</span>
+      <Title>Create an Account</Title>
+      <Span>Sign Up with Email and Password</Span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -94,8 +94,9 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-
-        <Button type="submit">Sign Up</Button>
+        <ButtonWrapper>
+          <NavLink type="submit">Create Account</NavLink>
+        </ButtonWrapper>
       </form>
     </SignUpContainer>
   );

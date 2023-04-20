@@ -15,6 +15,8 @@ import {
   Arrow,
   Value,
   RemoveButton,
+  CheckoutHeader,
+  Price,
 } from "./checkoutItemStyles.jsx";
 
 const CheckoutItem = ({ cartItem }) => {
@@ -30,17 +32,19 @@ const CheckoutItem = ({ cartItem }) => {
 
   return (
     <CheckoutItemContainer>
-      <ImageContainer>
-        <img src={imageUrl} alt={`${name}`} />
-      </ImageContainer>
-      <BaseSpan>{name}</BaseSpan>
-      <Quantity>
-        <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
-        <Value>{quantity}</Value>
-        <Arrow onClick={addItemHandler}>&#10095;</Arrow>
-      </Quantity>
-      <BaseSpan>{price}</BaseSpan>
-      <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+      <CheckoutHeader>
+        <ImageContainer>
+          <img src={imageUrl} alt={`${name}`} />
+        </ImageContainer>
+        <BaseSpan>{name}</BaseSpan>
+        <Quantity>
+          <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
+          <Value>{quantity}</Value>
+          <Arrow onClick={addItemHandler}>&#10095;</Arrow>
+        </Quantity>
+        <Price>${price}</Price>
+        <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+      </CheckoutHeader>
     </CheckoutItemContainer>
   );
 };

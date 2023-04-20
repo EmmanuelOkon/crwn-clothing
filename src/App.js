@@ -9,6 +9,7 @@ import Auth from "./routes/auth/authComponent";
 import Shop from "./routes/shop/shopComponents";
 import Checkout from "./routes/checkout/checkoutComponent";
 import { checkUserSession } from "./store/user/userAction";
+import SignUp from "./routes/auth/signUpComponent";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="shop/*" element={<Shop />} />
         <Route path="auth" element={<Auth />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="signup" element={<SignUp />} />
       </Route>
     </Routes>
   );

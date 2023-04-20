@@ -4,7 +4,14 @@ import { useDispatch } from "react-redux";
 import FormInput from "../formInput/formInputComponent";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/buttonComponent";
 
-import { SignInContainer, Title, ButtonsContainer } from "./signInFormStyles";
+import {
+  SignInContainer,
+  Title,
+  Span,
+  ButtonsContainer,
+  NavLink,
+  SignUpContainer,
+} from "./signInFormStyles";
 import {
   googleSignInStart,
   emailSignInStart,
@@ -48,7 +55,7 @@ const SignInForm = () => {
   return (
     <SignInContainer>
       <Title>Already have an account?</Title>
-      <span>Sign in with Email and Password</span>
+      <Span>Sign in with Email and Password</Span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
@@ -67,8 +74,7 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-        <ButtonsContainer className="buttons-container">
-          <Button type="submit">Sign In</Button>
+        <ButtonsContainer>
           <Button
             buttonType={BUTTON_TYPE_CLASSES.google}
             type="button"
@@ -76,8 +82,14 @@ const SignInForm = () => {
           >
             Sign In With Google
           </Button>
+          <Button type="submit">Sign In</Button>
         </ButtonsContainer>
       </form>
+      <SignUpContainer>
+        <Title>Don't have an account?</Title>
+        <Span>Create an account with Email and Password</Span>
+        <NavLink to="/signup">Sign Up</NavLink>
+      </SignUpContainer>
     </SignInContainer>
   );
 };

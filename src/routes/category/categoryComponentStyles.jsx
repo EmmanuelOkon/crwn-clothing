@@ -8,7 +8,22 @@ export const Title = styled.h2`
 
 export const CategoryContainer = styled.div`
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 50px;
+  width: 100%;
+  padding: 10px 40px;
+
+  @media (max-width: 969px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

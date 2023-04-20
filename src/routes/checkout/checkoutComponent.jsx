@@ -12,6 +12,7 @@ import {
   CheckoutHeader,
   HeaderBlock,
   Total,
+  RemoveButton,
 } from "./checkoutStyles.jsx";
 
 const Checkout = () => {
@@ -31,16 +32,16 @@ const Checkout = () => {
           <span>Quantity</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Price</span>
+          <span>Price </span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Remove</span>
+          <RemoveButton>Remove</RemoveButton>
         </HeaderBlock>
       </CheckoutHeader>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total>Total: ${cartTotal}</Total>
+      <Total>Total: $ {cartTotal}</Total>
     </CheckoutContainer>
   );
 };
