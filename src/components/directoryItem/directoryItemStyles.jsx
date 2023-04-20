@@ -6,7 +6,6 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-  /* background-color: red; */
 `;
 
 export const DirectoryItemBody = styled.div`
@@ -51,6 +50,21 @@ export const DirectoryItemContainer = styled.div`
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+
+  @media (max-width: 669px) {
+    transition: 300ms ease-in-out all;
+    /* flex: 2 2 auto; */
+    min-width: 40%;
+    /* padding: 16px 32px; */
+  }
+
+  @media (max-width: 380px) {
+    /* padding: 14px 26px; */
+  }
+
+  @media (max-width: 321px) {
+    /* padding: 12px 20px; */
+  }
 
   &:hover {
     cursor: pointer;

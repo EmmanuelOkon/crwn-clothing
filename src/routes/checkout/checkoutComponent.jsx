@@ -12,6 +12,7 @@ import {
   CheckoutHeader,
   HeaderBlock,
   Total,
+  RemoveButton,
 } from "./checkoutStyles.jsx";
 
 const Checkout = () => {
@@ -34,7 +35,7 @@ const Checkout = () => {
           <span>Price </span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Remove</span>
+          <RemoveButton>Remove</RemoveButton>
         </HeaderBlock>
       </CheckoutHeader>
       {cartItems.map((cartItem) => (

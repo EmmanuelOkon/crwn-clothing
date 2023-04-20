@@ -5,6 +5,8 @@ export const AuthenticationContainer = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
 
   @media (max-width: 769px) {
   }

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const SignInContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 100% auto;
 
   @media (max-width: 769px) {
   }
@@ -21,16 +21,15 @@ export const Span = styled.span`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
 `;
 
 export const SignUpContainer = styled.div`
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
   align-items: center;
   padding: 20px 0;

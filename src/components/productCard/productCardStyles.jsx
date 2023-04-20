@@ -7,12 +7,11 @@ export const ProductCardComponent = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  border-radius: 5px;
 
   @media (max-width: 769px) {
-    /* background-color: green; */
     height: 100%;
     border: 0.5px solid gray;
-    border-radius: 5px;
   }
 
   img {
@@ -20,18 +19,16 @@ export const ProductCardComponent = styled.div`
     height: 95%;
     object-fit: cover;
     margin-bottom: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     @media (max-width: 969px) {
       width: 260px;
       height: 320px;
       object-fit: cover;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
-
-    /* @media (max-width: 426px) {
-      width: 260px;
-      height: 320px;
-      object-fit: cover;
-    } */
   }
 
   button {

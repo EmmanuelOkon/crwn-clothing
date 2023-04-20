@@ -7,7 +7,14 @@ export const CheckoutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
-  // background-color: orange;
+
+  @media (max-width: 826px) {
+    width: 70%;
+  }
+
+  @media (max-width: 426px) {
+    width: 80%;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
@@ -20,10 +27,17 @@ export const CheckoutHeader = styled.div`
 
 export const HeaderBlock = styled.div`
   text-transform: capitalize;
-  width: 23%;
 
   &:last-child {
-    width: 8%;
+    /* width: 8%; */
+
+    @media (max-width: 826px) {
+      /* width: 1%; */
+    }
+  }
+
+  @media (max-width: 826px) {
+    font-size: 14px;
   }
 `;
 
@@ -31,4 +45,14 @@ export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+  font-weight: bolder;
+
+  @media (max-width: 826px) {
+    font-size: 26px;
+  }
+`;
+
+export const RemoveButton = styled.div`
+  display: flex;
+  cursor: pointer;
 `;
