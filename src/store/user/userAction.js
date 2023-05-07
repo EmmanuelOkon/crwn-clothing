@@ -1,6 +1,5 @@
 import { USER_ACTION_TYPES } from "./userTypes";
 import { createAction } from "../../utils/reducer/reducerUtils";
-import Toast from "../../routes/toast/toast";
 
 export const setCurrentUser = (user) =>
   createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user);
