@@ -37,6 +37,11 @@ export const ProductCardComponent = styled.div`
     position: absolute;
     top: 255px;
     display: none;
+
+    @media (max-width: 696px) {
+      display: block;
+      width: 70%;
+    }
   }
 
   &:hover {
@@ -63,13 +68,6 @@ export const Footer = styled.div`
     padding: 5px 0;
     align-items: center;
   }
-
-  /* @media (max-width: 426px) {
-    background-color: red;
-
-    display: flex;
-    align-items: center;
-  } */
 `;
 
 export const FooterName = styled.span`

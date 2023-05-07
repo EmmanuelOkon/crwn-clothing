@@ -62,37 +62,37 @@ const SignUpForm = () => {
         <FormInput
           label="Display Name"
           type="text"
-          required
           onChange={handleChange}
           name="displayName"
           value={displayName}
+          errorMessage="Please enter a valid display name"
         />
 
         <FormInput
           label="Email"
           type="email"
-          required
           onChange={handleChange}
           name="email"
           value={email}
+          errorMessage="Please enter a valid email"
         />
 
         <FormInput
           label="Password"
           type="password"
-          required
           onChange={handleChange}
           name="password"
           value={password}
+          errorMessage="Please enter a valid password"
         />
 
         <FormInput
           label="Confirm Password"
           type="password"
-          required
           onChange={handleChange}
           name="confirmPassword"
           value={confirmPassword}
+          errorMessage="Please enter a valid password"
         />
         <ButtonWrapper>
           <NavLink type="submit">Create Account</NavLink>

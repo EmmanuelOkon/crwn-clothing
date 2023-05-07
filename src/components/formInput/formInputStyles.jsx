@@ -48,9 +48,19 @@ export const Input = styled.input`
 export const Group = styled.div`
   position: relative;
   margin: 25px 10px;
-  display: flex;
+  /* display: flex; */
 
   input[type="password"] {
     letter-spacing: 0.3em;
   }
 `;
+
+// export const ErrorMessage = styled.span`
+//   color: red;
+//   font-size: 12px;
+//   visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
+
+//   input:invalid ~ & {
+//     display: block;
+//   }
+// `;
