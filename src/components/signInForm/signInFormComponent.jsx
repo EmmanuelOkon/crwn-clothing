@@ -64,6 +64,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
+          errorMessage="Please enter a valid email"
         />
 
         <FormInput
@@ -73,6 +74,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="password"
           value={password}
+          errorMessage="Please enter a valid password"
         />
         <ButtonsContainer>
           <Button

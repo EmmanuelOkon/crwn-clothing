@@ -14,10 +14,23 @@ export const CategoryPreviewContainer = styled.div`
 
 export const Title = styled.h2`
   padding-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @media (max-width: 769px) {
     padding-bottom: 0px;
     margin: 0;
   }
+`;
+
+export const ViewWrapper = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
+
+export const View = styled.p`
+  font-size: 14px;
+  padding-right: 0.5em;
 `;
 
 export const TitleLink = styled(Link)`

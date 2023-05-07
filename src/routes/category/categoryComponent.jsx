@@ -9,8 +9,14 @@ import {
   selectCategoriesMap,
   selectIsLoading,
 } from "../../store/categories/categorySelector";
+import { BsArrowLeft } from "react-icons/bs";
 
-import { Title, CategoryContainer } from "./categoryComponentStyles.jsx";
+import {
+  TitleWrapper,
+  IconWrapper,
+  Title,
+  CategoryContainer,
+} from "./categoryComponentStyles.jsx";
 
 const Category = () => {
   const { category } = useParams();
@@ -24,7 +30,13 @@ const Category = () => {
 
   return (
     <Fragment>
-      <Title>{category.toUpperCase()}</Title>
+      <TitleWrapper>
+        <IconWrapper>
+          <BsArrowLeft />
+        </IconWrapper>
+
+        <Title>{category.toUpperCase()}</Title>
+      </TitleWrapper>
       {isLoading ? (
         <Spinner />
       ) : (
